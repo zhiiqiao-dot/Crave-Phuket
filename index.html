@@ -1,0 +1,1580 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crave Restaurant and Bar - Bang Tao Beach, Phuket</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c19a6b;
+            --secondary-color: #d4af37;
+            --accent-color: #8b4513;
+            --light-color: #f9f6f0;
+            --dark-color: #333;
+            --background-color: #fff;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/4237b72921f64a6dae0af3e072f222ea.jpg~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&rcl=20260509223703D2040ECD3FA415E2E920&rrcfp=8a172a1a&x-expires=1778942223&x-signature=hutkgzrWpKsoO8f9DEan%2BphnWHs%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+        
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+        }
+        
+        .language-dropdown {
+            position: relative;
+        }
+        
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 120px;
+            z-index: 1;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .language-dropdown:hover .language-dropdown-content {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .language-option:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+            }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+            
+            .mobile-menu.active {
+                right: 0;
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+            
+            .overlay.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-md z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/e86ba76fa461495685bd93d2123622d1.png~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&amp;rcl=20260509223703D2040ECD3FA415E2E920&amp;rrcfp=8a172a1a&amp;x-expires=1778942223&amp;x-signature=TragKuIkJc2iMIk2LRQAJH%2BJnQo%3D" alt="Crave Logo" class="h-10 mr-2">
+                <span class="logo-font text-2xl">Crave <span class="text-sm font-normal">Restaurant &amp; Bar</span></span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="font-medium hover:text-orange-500 transition-colors">Home</a>
+                <a href="#menu" class="font-medium hover:text-orange-500 transition-colors">Menu</a>
+                <a href="#about" class="font-medium hover:text-orange-500 transition-colors">About</a>
+                <a href="#contact" class="font-medium hover:text-orange-500 transition-colors">Contact</a>
+                
+                <!-- Language Selector -->
+                <div class="language-dropdown">
+                    <button class="flex items-center space-x-1 font-medium hover:text-orange-500 transition-colors">
+                        <span id="current-language">English</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="language-dropdown-content mt-2">
+                        <a href="#" class="language-option" data-lang="en">
+                            <span class="flag-icon">🇬🇧</span>
+                            <span>English</span>
+                        </a>
+                        <a href="#" class="language-option" data-lang="th">
+                            <span class="flag-icon">🇹🇭</span>
+                            <span>Thai</span>
+                        </a>
+                        <a href="#" class="language-option" data-lang="zh">
+                            <span class="flag-icon">🇨🇳</span>
+                            <span>中文</span>
+                        </a>
+                        <a href="#" class="language-option" data-lang="ko">
+                            <span class="flag-icon">🇰🇷</span>
+                            <span>한국어</span>
+                        </a>
+                        <a href="#" class="language-option" data-lang="ja">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span>日本語</span>
+                        </a>
+                        <a href="#" class="language-option" data-lang="ru">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span>Русский</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#reservation" class="btn-primary px-5 py-2 rounded-full font-medium">Reserve</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu md:hidden" id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <span class="logo-font text-2xl">Crave</span>
+            <button class="text-2xl" id="close-menu-button">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4">
+            <a href="#home" class="font-medium py-2 hover:text-orange-500 transition-colors mobile-nav-link">Home</a>
+            <a href="#menu" class="font-medium py-2 hover:text-orange-500 transition-colors mobile-nav-link">Menu</a>
+            <a href="#about" class="font-medium py-2 hover:text-orange-500 transition-colors mobile-nav-link">About</a>
+            <a href="#contact" class="font-medium py-2 hover:text-orange-500 transition-colors mobile-nav-link">Contact</a>
+            
+            <!-- Mobile Language Selector -->
+            <div class="py-2">
+                <button class="flex items-center justify-between w-full font-medium" id="mobile-language-button">
+                    <span id="mobile-current-language">English</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="language-dropdown-content mt-2" id="mobile-language-dropdown">
+                    <a href="#" class="language-option" data-lang="en">
+                        <span class="flag-icon">🇬🇧</span>
+                        <span>English</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="th">
+                        <span class="flag-icon">🇹🇭</span>
+                        <span>Thai</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="zh">
+                        <span class="flag-icon">🇨🇳</span>
+                        <span>中文</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="ko">
+                        <span class="flag-icon">🇰🇷</span>
+                        <span>한국어</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="ja">
+                        <span class="flag-icon">🇯🇵</span>
+                        <span>日本語</span>
+                    </a>
+                    <a href="#" class="language-option" data-lang="ru">
+                        <span class="flag-icon">🇷🇺</span>
+                        <span>Русский</span>
+                    </a>
+                </div>
+            </div>
+            
+            <a href="#reservation" class="btn-primary px-5 py-2 rounded-full font-medium text-center mt-4">Reserve</a>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in" data-lang-key="hero-title">Powered by pancakes &amp; happiness</h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in" style="animation-delay: 0.2s;" data-lang-key="hero-subtitle">EGGS, COFFEE &amp; GOOD VIBES</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 fade-in" style="animation-delay: 0.4s;">
+                <a href="#menu" class="btn-primary px-8 py-3 rounded-full font-medium text-lg">
+                    <span data-lang-key="view-menu">View Menu</span>
+                </a>
+                <a href="#reservation" class="btn-secondary px-8 py-3 rounded-full font-medium text-lg">
+                    <span data-lang-key="book-now">Book Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://p5-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/11ec6a6cb1fd46bb9fa63ab1f1753099~tplv-a9rns2rl98-image.image?lk3s=8e244e95&amp;rcl=20260509223234D2277DABAE62347E5AB3&amp;rrcfp=e75484ac&amp;x-expires=1778941955&amp;x-signature=Kn%2BPFSHhGiEcwKTVlB5Pu4Sz1Bk%3D" alt="Crave Restaurant" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold" data-lang-key="about-us">About Us</h2>
+                    <p class="mb-4 text-gray-700" data-lang-key="about-text-1">Located in the beautiful Bang Tao Beach, Phuket, Crave Restaurant and Bar offers a unique dining experience with a blend of international cuisines and local flavors.</p>
+                    <p class="mb-4 text-gray-700" data-lang-key="about-text-2">Our philosophy is simple: fresh ingredients, creative recipes, and a relaxed atmosphere where everyone can enjoy delicious food and good company.</p>
+                    <p class="mb-6 text-gray-700" data-lang-key="about-text-3">Whether you're looking for a hearty breakfast, a quick lunch, or a romantic dinner with beach views, Crave has something for everyone.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-orange-500 mr-2"></i>
+                            <span class="text-gray-700" data-lang-key="open-hours">Open Daily</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            <span class="text-gray-700" data-lang-key="location">Bang Tao Beach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menu Section -->
+    <section id="menu" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center" data-lang-key="our-menu">Our Menu</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto" data-lang-key="menu-description">Explore our diverse menu featuring breakfast favorites, Thai specialties, Indian fusion dishes, pasta, pizza, and more.</p>
+            
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button class="menu-category-btn active px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="all">All</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="breakfast">Breakfast</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="thai">Thai Food</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="indian">Indian Fusion</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="pasta">Pasta &amp; Pizza</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="small-bites">Small Bites &amp; Salads</button>
+                <button class="menu-category-btn px-4 py-2 rounded-full border border-orange-500 text-sm font-medium transition-all" data-category="kids">Kids Menu</button>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-items">
+                <!-- Breakfast Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow relative" data-category="breakfast">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/fbe81b306419b677e450e0a4549e1ab3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=U78pTOQ6esY2LM6VtUD%2Ba8I0Hgo%3D" alt="Crave's Breakfast Set" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="breakfast-set">Crave's Breakfast Set</h3>
+                            <span class="text-orange-500 font-bold">฿220</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="breakfast-set-desc">Two eggs any style, bacon, sausages, toast, and fresh fruit.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 450 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="breakfast">
+                    <img src="https://p26-doubao-search-sign.byteimg.com/labis/2a825b43f5fe90a17b2248f72fd7b29d~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=La4k908L4u6Abpi6dJ0yqYYPPJY%3D" alt="Eggs Benedict" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="eggs-benedict">Eggs Benedict</h3>
+                            <span class="text-orange-500 font-bold">฿190</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="eggs-benedict-desc">Poached eggs on English muffins with Canadian bacon and hollandaise sauce.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 12 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 420 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="breakfast">
+                    <img src="https://p26-doubao-search-sign.byteimg.com/labis/b9c113633eeb2ad97f52b44b1fbb1e53~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=UiviQoqEC6Q8KJrg7PATj8m0CnU%3D" alt="Breakfast Burrito" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="breakfast-burrito">Breakfast Burrito</h3>
+                            <span class="text-orange-500 font-bold">฿180</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="breakfast-burrito-desc">Flour tortilla filled with scrambled eggs, bacon, cheese, and salsa.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 10 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 520 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Thai Food Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow relative" data-category="thai">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Green Curry" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="green-curry">Green Curry</h3>
+                            <span class="text-orange-500 font-bold">฿240</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="green-curry-desc">Traditional Thai green curry with your choice of chicken, beef, or vegetables.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 20 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 380 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="thai">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Tom Yum Soup" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="tom-yum">Tom Yum Soup</h3>
+                            <span class="text-orange-500 font-bold">฿160</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="tom-yum-desc">Spicy and sour Thai soup with shrimp, mushrooms, and lemongrass.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 180 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="thai">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Phad Krapao" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="phad-krapao">Phad Krapao</h3>
+                            <span class="text-orange-500 font-bold">฿180</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="phad-krapao-desc">Stir-fried basil with minced meat and jasmine rice, topped with a fried egg.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 420 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Indian Fusion Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="indian">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Avocado Chaat" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="avocado-chaat">Avocado Chaat</h3>
+                            <span class="text-orange-500 font-bold">฿170</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="avocado-chaat-desc">Creamy avocado with Indian spices, chutney, and crispy sev.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 10 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 320 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow relative" data-category="indian">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Butter Chicken" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="butter-chicken">Butter Chicken</h3>
+                            <span class="text-orange-500 font-bold">฿250</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="butter-chicken-desc">Tender chicken in a rich tomato and butter sauce, served with naan bread.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 25 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 480 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="indian">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Lamb Masala" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="lamb-masala">Lamb Masala</h3>
+                            <span class="text-orange-500 font-bold">฿280</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="lamb-masala-desc">Slow-cooked lamb in a fragrant masala sauce with basmati rice.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 30 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 520 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pasta & Pizza Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="pasta">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Carbonara" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="carbonara">Carbonara</h3>
+                            <span class="text-orange-500 font-bold">฿220</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="carbonara-desc">Classic Italian pasta with eggs, pecorino cheese, pancetta, and black pepper.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 490 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="pasta">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Aglio E Olio" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="aglio-olio">Aglio E Olio</h3>
+                            <span class="text-orange-500 font-bold">฿190</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="aglio-olio-desc">Pasta with garlic, olive oil, red pepper flakes, and parsley.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 12 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 420 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow relative" data-category="pasta">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Margherita Pizza" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="margherita-pizza">Margherita Pizza</h3>
+                            <span class="text-orange-500 font-bold">฿240</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="margherita-pizza-desc">Classic pizza with tomato sauce, mozzarella, basil, and extra virgin olive oil.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 20 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 720 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Small Bites & Salads Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="small-bites">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Caesar Salad" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="caesar-salad">Caesar Salad</h3>
+                            <span class="text-orange-500 font-bold">฿160</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="caesar-salad-desc">Crisp romaine lettuce with Caesar dressing, croutons, and parmesan cheese.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 10 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 380 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="small-bites">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Spring Rolls" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="spring-rolls">Spring Rolls</h3>
+                            <span class="text-orange-500 font-bold">฿140</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="spring-rolls-desc">Crispy spring rolls filled with vegetables and your choice of meat.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 320 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kids Menu Items -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="kids">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Kids Chicken Nuggets" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="kids-nuggets">Chicken Nuggets</h3>
+                            <span class="text-orange-500 font-bold">฿120</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="kids-nuggets-desc">Crispy chicken nuggets served with fries and ketchup.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 15 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 450 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow" data-category="kids">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/ccc0d886ffb1d48e5333cfb965feecc3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1793888651&amp;x-signature=5qRw0S%2FEjfPYgTw%2Bv4eatxfFHzU%3D" alt="Kids Pasta" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg" data-lang-key="kids-pasta">Mini Pasta</h3>
+                            <span class="text-orange-500 font-bold">฿130</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3" data-lang-key="kids-pasta-desc">Small pasta shells with a mild tomato sauce and cheese.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-3"><i class="fas fa-clock mr-1"></i> 12 min</span>
+                            <span><i class="fas fa-fire mr-1"></i> 380 cal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Price Note -->
+            <div class="mt-10 text-center text-gray-600 italic" data-lang-key="price-note">All prices are subject to 10% service charge and 7% government tax.</div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center" data-lang-key="contact-us">Contact Us</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 mt-10">
+                <!-- Contact Information -->
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4" data-lang-key="contact-info">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium" data-lang-key="address">Address</h4>
+                                    <p class="text-gray-600">Cherngthaley, 69/60-61 Moo 3 Baan, Thalang District, Phuket 83110</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium" data-lang-key="phone">Phone</h4>
+                                    <p class="text-gray-600">098-251-8995</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium" data-lang-key="email">Email</h4>
+                                    <p class="text-gray-600">cravephuket@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-orange-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium" data-lang-key="opening-hours">Opening Hours</h4>
+                                    <p class="text-gray-600" data-lang-key="hours-detail">Saturday to Thursday: 11:00 - 22:30</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media Links -->
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-3" data-lang-key="follow-us">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden h-full">
+                        <div class="h-80 bg-gray-200 relative">
+                            <!-- Map placeholder - in a real implementation, you would embed Google Maps here -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marked-alt text-4xl text-orange-500 mb-2"></i>
+                                    <p class="font-medium" data-lang-key="map-placeholder">Map of our location</p>
+                                    <p class="text-sm text-gray-600" data-lang-key="map-address">Bang Tao Beach, Phuket</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-2">
+                        <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/e86ba76fa461495685bd93d2123622d1.png~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&amp;rcl=20260509223703D2040ECD3FA415E2E920&amp;rrcfp=8a172a1a&amp;x-expires=1778942223&amp;x-signature=TragKuIkJc2iMIk2LRQAJH%2BJnQo%3D" alt="Crave Logo" class="h-8 mr-2">
+                        <h3 class="logo-font text-2xl text-white">Crave</h3>
+                    </div>
+                    <p class="text-gray-400" data-lang-key="footer-tagline">Powered by pancakes &amp; happiness</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-white font-medium mb-3" data-lang-key="quick-links">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors" data-lang-key="home">Home</a></li>
+                            <li><a href="#menu" class="text-gray-400 hover:text-white transition-colors" data-lang-key="menu">Menu</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors" data-lang-key="about">About</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors" data-lang-key="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-3" data-lang-key="contact-footer">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400">098-251-8995</li>
+                            <li class="text-gray-400">cravephuket@gmail.com</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-medium mb-3" data-lang-key="hours-footer">Opening Hours</h4>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400" data-lang-key="hours-days">Saturday - Thursday</li>
+                            <li class="text-gray-400">11:00 - 22:30</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0" data-lang-key="copyright">© 2025 Crave Restaurant and Bar. All rights reserved.</p>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold" data-lang-key="make-reservation">Make a Reservation</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="reservation-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 mb-2" data-lang-key="your-name">Your Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 mb-2" data-lang-key="phone-number">Phone Number</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="date" class="block text-gray-700 mb-2" data-lang-key="reservation-date">Date</label>
+                    <input type="date" id="date" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="time" class="block text-gray-700 mb-2" data-lang-key="reservation-time">Time</label>
+                    <input type="time" id="time" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="guests" class="block text-gray-700 mb-2" data-lang-key="number-of-guests">Number of Guests</label>
+                    <select id="guests" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6 People</option>
+                        <option value="more">More than 6</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 mb-2" data-lang-key="special-requests">Special Requests</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" data-lang-key="special-requests-placeholder" placeholder="Allergies, special occasions, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary w-full py-3 rounded-md font-medium">
+                    <span data-lang-key="confirm-reservation">Confirm Reservation</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Floating Reservation Button -->
+    <a href="#reservation" class="floating-btn" id="floating-reservation-btn">
+        <i class="fas fa-calendar-plus"></i>
+    </a>
+    
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                'hero-title': 'Powered by pancakes & happiness',
+                'hero-subtitle': 'EGGS, COFFEE & GOOD VIBES',
+                'view-menu': 'View Menu',
+                'book-now': 'Book Now',
+                'about-us': 'About Us',
+                'about-text-1': 'Located in the beautiful Bang Tao Beach, Phuket, Crave Restaurant and Bar offers a unique dining experience with a blend of international cuisines and local flavors.',
+                'about-text-2': 'Our philosophy is simple: fresh ingredients, creative recipes, and a relaxed atmosphere where everyone can enjoy delicious food and good company.',
+                'about-text-3': 'Whether you\'re looking for a hearty breakfast, a quick lunch, or a romantic dinner with beach views, Crave has something for everyone.',
+                'open-hours': 'Open Daily',
+                'location': 'Bang Tao Beach',
+                'our-menu': 'Our Menu',
+                'menu-description': 'Explore our diverse menu featuring breakfast favorites, Thai specialties, Indian fusion dishes, pasta, pizza, and more.',
+                'breakfast-set': 'Crave\'s Breakfast Set',
+                'breakfast-set-desc': 'Two eggs any style, bacon, sausages, toast, and fresh fruit.',
+                'eggs-benedict': 'Eggs Benedict',
+                'eggs-benedict-desc': 'Poached eggs on English muffins with Canadian bacon and hollandaise sauce.',
+                'breakfast-burrito': 'Breakfast Burrito',
+                'breakfast-burrito-desc': 'Flour tortilla filled with scrambled eggs, bacon, cheese, and salsa.',
+                'green-curry': 'Green Curry',
+                'green-curry-desc': 'Traditional Thai green curry with your choice of chicken, beef, or vegetables.',
+                'tom-yum': 'Tom Yum Soup',
+                'tom-yum-desc': 'Spicy and sour Thai soup with shrimp, mushrooms, and lemongrass.',
+                'phad-krapao': 'Phad Krapao',
+                'phad-krapao-desc': 'Stir-fried basil with minced meat and jasmine rice, topped with a fried egg.',
+                'avocado-chaat': 'Avocado Chaat',
+                'avocado-chaat-desc': 'Creamy avocado with Indian spices, chutney, and crispy sev.',
+                'butter-chicken': 'Butter Chicken',
+                'butter-chicken-desc': 'Tender chicken in a rich tomato and butter sauce, served with naan bread.',
+                'lamb-masala': 'Lamb Masala',
+                'lamb-masala-desc': 'Slow-cooked lamb in a fragrant masala sauce with basmati rice.',
+                'carbonara': 'Carbonara',
+                'carbonara-desc': 'Classic Italian pasta with eggs, pecorino cheese, pancetta, and black pepper.',
+                'aglio-olio': 'Aglio E Olio',
+                'aglio-olio-desc': 'Pasta with garlic, olive oil, red pepper flakes, and parsley.',
+                'margherita-pizza': 'Margherita Pizza',
+                'margherita-pizza-desc': 'Classic pizza with tomato sauce, mozzarella, basil, and extra virgin olive oil.',
+                'caesar-salad': 'Caesar Salad',
+                'caesar-salad-desc': 'Crisp romaine lettuce with Caesar dressing, croutons, and parmesan cheese.',
+                'spring-rolls': 'Spring Rolls',
+                'spring-rolls-desc': 'Crispy spring rolls filled with vegetables and your choice of meat.',
+                'kids-nuggets': 'Chicken Nuggets',
+                'kids-nuggets-desc': 'Crispy chicken nuggets served with fries and ketchup.',
+                'kids-pasta': 'Mini Pasta',
+                'kids-pasta-desc': 'Small pasta shells with a mild tomato sauce and cheese.',
+                'price-note': 'All prices are subject to 10% service charge and 7% government tax.',
+                'contact-us': 'Contact Us',
+                'contact-info': 'Contact Information',
+                'address': 'Address',
+                'phone': 'Phone',
+                'email': 'Email',
+                'opening-hours': 'Opening Hours',
+                'hours-detail': 'Saturday to Thursday: 11:00 - 22:30',
+                'follow-us': 'Follow Us',
+                'map-placeholder': 'Map of our location',
+                'map-address': 'Bang Tao Beach, Phuket',
+                'footer-tagline': 'Powered by pancakes & happiness',
+                'quick-links': 'Quick Links',
+                'home': 'Home',
+                'menu': 'Menu',
+                'about': 'About',
+                'contact': 'Contact',
+                'contact-footer': 'Contact',
+                'hours-footer': 'Opening Hours',
+                'hours-days': 'Saturday - Thursday',
+                'copyright': '© 2025 Crave Restaurant and Bar. All rights reserved.',
+                'make-reservation': 'Make a Reservation',
+                'your-name': 'Your Name',
+                'phone-number': 'Phone Number',
+                'reservation-date': 'Date',
+                'reservation-time': 'Time',
+                'number-of-guests': 'Number of Guests',
+                'special-requests': 'Special Requests',
+                'special-requests-placeholder': 'Allergies, special occasions, etc.',
+                'confirm-reservation': 'Confirm Reservation'
+            },
+            th: {
+                'hero-title': 'ขับเคลื่อนด้วยแพนเค้กและความสุข',
+                'hero-subtitle': 'ไข่, กาแฟ และอารมณ์ที่ดี',
+                'view-menu': 'ดูเมนู',
+                'book-now': 'จองที่นั่ง',
+                'about-us': 'เกี่ยวกับเรา',
+                'about-text-1': 'ตั้งอยู่ที่ชายหาดบางเตา普吉岛สวยงาม, Crave Restaurant and Bar ให้ประสบการณ์การรับประทานอาหารที่ไม่เหมือนใครที่ผสมผสานอาหารนานาชาติและรสชาติท้องถิ่น',
+                'about-text-2': ' philosophy ของเราสำหรับง่าย: ส่วนผสมสด, สูตรอาหารสร้างสรรค์, และบรรยากาศที่ผ่อนคลายที่ทุกคนสามารถเพลิดเพลินกับอาหารอร่อยและบรรยากาศดี',
+                'about-text-3': 'ไม่ว่าคุณกำลังมองหาอาหารเช้าที่อร่อย, อาหารกลางวันที่รวดเร็ว, หรืออาหารเย็นโรแมนติกพร้อมวิวชายหาด, Crave มีอะไรสำหรับทุกคน',
+                'open-hours': 'เปิดทุกวัน',
+                'location': 'ชายหาดบางเตา',
+                'our-menu': 'เมนูของเรา',
+                'menu-description': 'สำรวจเมนูที่หลากหลายของเราได้แก่ อาหารเช้าที่โปรดปราน, ไทยพิเศษ, อาหารอินเดียฟิวชั่น, ปาสต้า, พิซซ่า, และอื่นๆ',
+                'breakfast-set': 'เซ็ตอาหารเช้าของ Crave',
+                'breakfast-set-desc': 'ไข่ 2 ฟองในแบบที่คุณต้องการ, เบคอน, ไส้กรอก, ขนมปังทาน土司, และผลไม้สด',
+                'eggs-benedict': 'ไข่เบเนดิคต์',
+                'eggs-benedict-desc': 'ไข่พอชนบนขนมปังอังกฤษกับเบคอนแคนาดาและซอสโฮแลนเดส',
+                'breakfast-burrito': 'บุริโตอาหารเช้า',
+                'breakfast-burrito-desc': 'โรลโทรตีญาใส่ไข่คน, เบคอน, ชีส, และซัลซ่า',
+                'green-curry': 'แกงเขียวหวาน',
+                'green-curry-desc': 'แกงเขียวหวานไทยแบบดั้งเดิมพร้อมไก่, เนื้อ, หรือผักตามต้องการ',
+                'tom-yum': 'ต้มยำ',
+                'tom-yum-desc': 'ซุปไทยเผ็ดและเปรี้ยวพร้อมกุ้ง, เห็ด, และตะไคร้',
+                'phad-krapao': 'ผัดกระเพรา',
+                'phad-krapao-desc': 'ผัดกระเพรากับเนื้อสับและข้าวกล้อง, ปิดท้ายด้วยไข่ทอด',
+                'avocado-chaat': 'อะโวคาโดะชาต',
+                'avocado-chaat-desc': 'อะโวคาโดะครีมด้วยเครื่องเทศอินเดีย, ชัตนี, และเซฟคั่ว',
+                'butter-chicken': 'ไก่เนื้อบাটเตอร์',
+                'butter-chicken-desc': 'ไก่เนื้อหมักในซอสโทมาที่เข้มข้นและเนย, เสิร์ฟพร้อมนาญา',
+                'lamb-masala': 'แกงหมี่มาสาลา',
+                'lamb-masala-desc': 'เนื้อแกะที่ตุ๋นช้าในซอสมาสาลาที่หอมกรุ่นพร้อมข้าวบาสมาติ',
+                'carbonara': 'คาร์โบนาร่า',
+                'carbonara-desc': 'ปาสต้าไทยแบบคลาสสิกพร้อมไข่, ชีสเปโคเรียโน, ปันเซตตา, และพริกไทยดำ',
+                'aglio-olio': 'อาโกลิโอโอลิโอ',
+                'aglio-olio-desc': 'ปาสต้าพร้อมกระเทียม, น้ำมันมะกอก, เกล็ดพริกแดง, และผักชี',
+                'margherita-pizza': 'พิซซ่ามาร์เกรต้า',
+                'margherita-pizza-desc': 'พิซซ่าคลาสสิกพร้อมซอสโทมา, มอชาเรลล่า, บาซิล, และน้ำมันมะกอกแอลกอฮอล์บริสุทธิ์',
+                'caesar-salad': 'สลัดซีซาร์',
+                'caesar-salad-desc': 'ผักก салาดโรมาเน่คั่วพร้อม dressing ซีซาร์, กรัวท่อน, และชีสปาร์มาชีโวน',
+                'spring-rolls': '春卷',
+                'spring-rolls-desc': '春卷กรอบที่ใส่ผักและเนื้อตามต้องการ',
+                'kids-nuggets': 'ไก่ก็อปปิ้งสำหรับเด็ก',
+                'kids-nuggets-desc': 'ไก่ก็อปปิ้งกรอบเสิร์ฟพร้อมเฟรนช์ฟรายส์และเก็ตชัป',
+                'kids-pasta': 'ปาสต้าเล็กสำหรับเด็ก',
+                'kids-pasta-desc': 'เปลือกปาสต้าเล็กๆ พร้อมซอสโทมาแบบอ่อนและชีส',
+                'price-note': 'ราคาทั้งหมดมีค่าบริการ 10% และภาษีรัฐ 7%',
+                'contact-us': 'ติดต่อเรา',
+                'contact-info': 'ข้อมูลการติดต่อ',
+                'address': 'ที่อยู่',
+                'phone': 'โทรศัพท์',
+                'email': 'อีเมล',
+                'opening-hours': 'เวลาเปิด',
+                'hours-detail': 'เสาร์ถึงพฤหัสบดี: 11:00 - 22:30',
+                'follow-us': 'ติดตามเรา',
+                'map-placeholder': 'แผนที่ของที่ตั้งของเรา',
+                'map-address': 'ชายหาดบางเตา, ภูเก็ต',
+                'footer-tagline': 'ขับเคลื่อนด้วยแพนเค้กและความสุข',
+                'quick-links': 'ลิงก์รวดเร็ว',
+                'home': 'หน้าแรก',
+                'menu': 'เมนู',
+                'about': 'เกี่ยวกับ',
+                'contact': 'ติดต่อ',
+                'contact-footer': 'ติดต่อ',
+                'hours-footer': 'เวลาเปิด',
+                'hours-days': 'เสาร์ - พฤหัสบดี',
+                'copyright': '© 2025 Crave Restaurant and Bar. สงวนลิขสิทธิ์ทั้งหมด',
+                'make-reservation': 'ทำการจอง',
+                'your-name': 'ชื่อของคุณ',
+                'phone-number': 'หมายเลขโทรศัพท์',
+                'reservation-date': 'วันที่',
+                'reservation-time': 'เวลา',
+                'number-of-guests': 'จำนวนแขก',
+                'special-requests': 'คำขอพิเศษ',
+                'special-requests-placeholder': 'ภูมิแพ้, โอกาสพิเศษ, ฯลฯ',
+                'confirm-reservation': 'ยืนยันการจอง'
+            },
+            zh: {
+                'hero-title': '由煎饼和幸福驱动',
+                'hero-subtitle': '鸡蛋、咖啡和美好氛围',
+                'view-menu': '查看菜单',
+                'book-now': '立即预订',
+                'about-us': '关于我们',
+                'about-text-1': '位于美丽的普吉岛邦涛海滩，Crave餐厅和酒吧提供独特的用餐体验，融合了国际美食和当地风味。',
+                'about-text-2': '我们的理念很简单：新鲜食材、创意食谱和轻松的氛围，让每个人都能享受美食和美好时光。',
+                'about-text-3': '无论您是寻找丰盛的早餐、快捷的午餐还是带海滩景观的浪漫晚餐，Crave都能满足您的需求。',
+                'open-hours': '每日开放',
+                'location': '邦涛海滩',
+                'our-menu': '我们的菜单',
+                'menu-description': '探索我们多样化的菜单，包括早餐 favorites、泰式特色菜、印度 fusion 菜肴、意大利面、披萨等。',
+                'breakfast-set': 'Crave早餐套餐',
+                'breakfast-set-desc': '两个任意风格的鸡蛋、培根、香肠、吐司和新鲜水果。',
+                'eggs-benedict': '班尼迪克蛋',
+                'eggs-benedict-desc': '英式松饼上的水波蛋配加拿大培根和荷兰酱。',
+                'breakfast-burrito': '早餐卷饼',
+                'breakfast-burrito-desc': '面粉玉米饼 filled with 炒鸡蛋、培根、奶酪和莎莎酱。',
+                'green-curry': '绿咖喱',
+                'green-curry-desc': '传统泰式绿咖喱，可选鸡肉、牛肉或蔬菜。',
+                'tom-yum': '冬阴功汤',
+                'tom-yum-desc': '辛辣酸甜的泰式汤，配虾、蘑菇和柠檬草。',
+                'phad-krapao': '帕卡宝',
+                'phad-krapao-desc': '炒罗勒配肉末和茉莉香米，顶部放一个煎蛋。',
+                'avocado-chaat': '鳄梨沙拉',
+                'avocado-chaat-desc': '奶油鳄梨配印度香料、酸辣酱和酥脆 sev。',
+                'butter-chicken': '黄油鸡',
+                'butter-chicken-desc': '嫩滑鸡肉配浓郁的番茄黄油酱，配烤饼。',
+                'lamb-masala': '羊肉玛莎拉',
+                'lamb-masala-desc': '慢煮羊肉配香玛莎拉酱和印度香米。',
+                'carbonara': '卡邦尼意面',
+                'carbonara-desc': '经典意大利面配鸡蛋、佩科里诺奶酪、培根和黑胡椒。',
+                'aglio-olio': '大蒜橄榄油意面',
+                'aglio-olio-desc': '意面配大蒜、橄榄油、红辣椒片和欧芹。',
+                'margherita-pizza': '玛格丽特披萨',
+                'margherita-pizza-desc': '经典披萨配番茄酱、马苏里拉奶酪、罗勒和特级初榨橄榄油。',
+                'caesar-salad': '凯撒沙拉',
+                'caesar-salad-desc': '脆罗马生菜配凯撒酱、面包丁和帕玛森奶酪。',
+                'spring-rolls': '春卷',
+                'spring-rolls-desc': '酥脆春卷 filled with 蔬菜和您选择的肉类。',
+                'kids-nuggets': '儿童鸡块',
+                'kids-nuggets-desc': '酥脆鸡块配薯条和番茄酱。',
+                'kids-pasta': '儿童意面',
+                'kids-pasta-desc': '小意面壳配温和的番茄酱和奶酪。',
+                'price-note': '所有价格需加收10%服务费和7%政府税。',
+                'contact-us': '联系我们',
+                'contact-info': '联系信息',
+                'address': '地址',
+                'phone': '电话',
+                'email': '邮箱',
+                'opening-hours': '营业时间',
+                'hours-detail': '周六至周四: 11:00 - 22:30',
+                'follow-us': '关注我们',
+                'map-placeholder': '我们位置的地图',
+                'map-address': '普吉岛邦涛海滩',
+                'footer-tagline': '由煎饼和幸福驱动',
+                'quick-links': '快速链接',
+                'home': '首页',
+                'menu': '菜单',
+                'about': '关于',
+                'contact': '联系',
+                'contact-footer': '联系',
+                'hours-footer': '营业时间',
+                'hours-days': '周六 - 周四',
+                'copyright': '© 2025 Crave餐厅和酒吧。保留所有权利。',
+                'make-reservation': '预订座位',
+                'your-name': '您的姓名',
+                'phone-number': '电话号码',
+                'reservation-date': '日期',
+                'reservation-time': '时间',
+                'number-of-guests': '客人数量',
+                'special-requests': '特殊要求',
+                'special-requests-placeholder': '过敏、特殊场合等',
+                'confirm-reservation': '确认预订'
+            },
+            ko: {
+                'hero-title': '팬케이크와 행복으로 움직이는',
+                'hero-subtitle': '계란, 커피 & 좋은 분위기',
+                'view-menu': '메뉴 보기',
+                'book-now': '지금 예약',
+                'about-us': '우리에 대하여',
+                'about-text-1': '푸켓의 아름다운 방타오 비치에 위치한 Crave 레스토랑 앤 바는 국제 요리와 현지 맛을 혼합한 독특한 식사 경험을 제공합니다.',
+                'about-text-2': '우리의 철학은 간단합니다: 신선한 재료, 창의적인 레시피, 그리고 모든 사람이 맛있는 음식과 좋은 회사를 즐길 수 있는 편안한 분위기.',
+                'about-text-3': '풍성한 아침 식사, 빠른 점심, 또는 해변 전망과 함께하는 로맨틱한 저녁 식사를 찾고 있든, Crave는 모든 사람을 위한 무언가를 가지고 있습니다.',
+                'open-hours': '매일 영업',
+                'location': '방타오 비치',
+                'our-menu': '우리의 메뉴',
+                'menu-description': '아침 식사 즐겨찾기, 태국 특산품, 인도 퓨전 요리, 파스타, 피자 등을 포함한 다양한 메뉴를 탐색하세요.',
+                'breakfast-set': 'Crave의 아침 식사 세트',
+                'breakfast-set-desc': '원하는 방식으로 2개의 계란, 베이컨, 소시지, 토스트, 신선한 과일.',
+                'eggs-benedict': '에그 베네딕트',
+                'eggs-benedict-desc': '잉글리시 머핀 위에 푹간 계란과 캐나다 베이컨, 홀랜다이스 소스.',
+                'breakfast-burrito': '아침 버리또',
+                'breakfast-burrito-desc': '스크램블 에그, 베이컨, 치즈, 살사가 들어간 플라워 톨티야.',
+                'green-curry': '그린 카레',
+                'green-curry-desc': '닭, 쇠고기, 야채 중에서 선택할 수 있는 전통적인 태국 그린 카레.',
+                'tom-yum': '톰얌 수프',
+                'tom-yum-desc': '새우, 버섯, 레몬그라스가 들어간 맵고 신맛 나는 태국 수프.',
+                'phad-krapao': '팟 카파오',
+                'phad-krapao-desc': '다진 고기와 자스민 쌀이 들어간 볶음 바질, 프라이드 에그로 꾸며집니다.',
+                'avocado-chaat': '아보카도 차트',
+                'avocado-chaat-desc': '인도 향신료, 찻니, 바삭한 세브가 들어간 크림 아보카도.',
+                'butter-chicken': '버터 치킨',
+                'butter-chicken-desc': '풍부한 토마토와 버터 소스에 담긴 연한 치킨, 나안 빵과 함께 제공됩니다.',
+                'lamb-masala': '램 마살라',
+                'lamb-masala-desc': '향긋한 마살라 소스에 천천히 익힌 양고기, 바스마티 쌀과 함께 제공됩니다.',
+                'carbonara': '카르보나라',
+                'carbonara-desc': '에그, 페코리노 치즈, 팬체타, 흑후추가 들어간 클래식 이탈리아 파스타.',
+                'aglio-olio': '아글리오 올리오',
+                'aglio-olio-desc': '마늘, 올리브 오일, 빨간 후추 플레이크, 파슬리가 들어간 파스타.',
+                'margherita-pizza': '마르게리타 피자',
+                'margherita-pizza-desc': '토마토 소스, 모짜렐라, 바질, 엑스트라 버진 올리브 오일이 들어간 클래식 피자.',
+                'caesar-salad': '시저 샐러드',
+                'caesar-salad-desc': '시저 드레싱, 크루통, 파마산 치즈가 들어간 바삭한 로마인 상추.',
+                'spring-rolls': '스프링 롤',
+                'spring-rolls-desc': '야채와 선택한 고기가 들어간 바삭한 스프링 롤.',
+                'kids-nuggets': '키즈 치킨 너겟',
+                'kids-nuggets-desc': '프라이와 케첩과 함께 제공되는 바삭한 치킨 너겟.',
+                'kids-pasta': '키즈 미니 파스타',
+                'kids-pasta-desc': '순한 토마토 소스와 치즈가 들어간 작은 파스타 껍질.',
+                'price-note': '모든 가격에는 10% 서비스 요금과 7% 정부 세금이 추가됩니다.',
+                'contact-us': '연락주세요',
+                'contact-info': '연락 정보',
+                'address': '주소',
+                'phone': '전화',
+                'email': '이메일',
+                'opening-hours': '영업 시간',
+                'hours-detail': '토요일 ~ 목요일: 11:00 - 22:30',
+                'follow-us': '팔로우하세요',
+                'map-placeholder': '우리 위치 지도',
+                'map-address': '푸켓 방타오 비치',
+                'footer-tagline': '팬케이크와 행복으로 움직이는',
+                'quick-links': '빠른 링크',
+                'home': '홈',
+                'menu': '메뉴',
+                'about': '소개',
+                'contact': '연락',
+                'contact-footer': '연락',
+                'hours-footer': '영업 시간',
+                'hours-days': '토요일 - 목요일',
+                'copyright': '© 2025 Crave Restaurant and Bar. 모든 권리 보유.',
+                'make-reservation': '예약하기',
+                'your-name': '이름',
+                'phone-number': '전화번호',
+                'reservation-date': '날짜',
+                'reservation-time': '시간',
+                'number-of-guests': '게스트 수',
+                'special-requests': '특별 요청',
+                'special-requests-placeholder': '알레르기, 특별 행사 등',
+                'confirm-reservation': '예약 확인'
+            },
+            ja: {
+                'hero-title': 'パンケーキと幸せで駆動',
+                'hero-subtitle': '卵、コーヒー＆良いバイブス',
+                'view-menu': 'メニューを見る',
+                'book-now': '今すぐ予約',
+                'about-us': '私たちについて',
+                'about-text-1': '美しいプーケット島のバンタオビーチに位置するCraveレストラン＆バーは、国際的な料理と地元の味を融合させたユニークな食体験を提供します。',
+                'about-text-2': '私たちの哲学はシンプルです：新鮮な食材、創造的なレシピ、そして誰もが美味しい食べ物と良い仲間を楽しむことができるリラックスした雰囲気。',
+                'about-text-3': 'ヘルシーな朝食、quickランチ、ビーチビューのロマンチックなディナーなど、Craveには誰にでもぴったりのものがあります。',
+                'open-hours': '毎日開業',
+                'location': 'バンタオビーチ',
+                'our-menu': '私たちのメニュー',
+                'menu-description': '朝食のお気に入り、タイの特産品、インドの融合料理、パスタ、ピザなど、多様なメニューを探索してください。',
+                'breakfast-set': 'Craveの朝食セット',
+                'breakfast-set-desc': '好みのスタイルの卵2個、ベーコン、ソーセージ、トースト、新鮮なフルーツ。',
+                'eggs-benedict': 'エッグベネディクト',
+                'eggs-benedict-desc': 'イギリスのマフィンの上にポーチエッグ、カナダベーコン、ホランデーズソース。',
+                'breakfast-burrito': '朝食ブリトー',
+                'breakfast-burrito-desc': 'スクランブルエッグ、ベーコン、チーズ、サルサを詰めた小麦粉のトルティーヤ。',
+                'green-curry': 'グリーンカレー',
+                'green-curry-desc': 'チキン、牛肉、野菜からお選びいただける伝統的なタイのグリーンカレー。',
+                'tom-yum': 'トムヤムスープ',
+                'tom-yum-desc': 'エビ、きのこ、レモングラスを使った辛くて酸っぱいタイのスープ。',
+                'phad-krapao': 'パッカパオ',
+                'phad-krapao-desc': '挽肉とジャスミン riceを使ったバジル炒め、上にフライドエッグをのせます。',
+                'avocado-chaat': 'アボカドチャート',
+                'avocado-chaat-desc': 'インドのスパイス、チュートニー、カリカリのセブを添えたクリーミーなアボカド。',
+                'butter-chicken': 'バターチキン',
+                'butter-chicken-desc': '濃厚なトマトとバターソースに浸した柔らかいチキン、ナンブレッドと一緒に提供。',
+                'lamb-masala': 'ラムマサラ',
+                'lamb-masala-desc': '香り高いマサラソースでゆっくり煮込んだラム肉、バスマティ riceと一緒に提供。',
+                'carbonara': 'カルボナーラ',
+                'carbonara-desc': '卵、ペコリーノチーズ、パンチェッタ、黒胡椒を使ったクラシックなイタリアのパスタ。',
+                'aglio-olio': 'アグリオオリオ',
+                'aglio-olio-desc': 'ニンニク、オリーブオイル、赤唐辛子のフレーク、パセリを使ったパスタ。',
+                'margherita-pizza': 'マルゲリータピザ',
+                'margherita-pizza-desc': 'トマトソース、モッツァレラチーズ、バジル、エクストラバージンオリーブオイルを使ったクラシックなピザ。',
+                'caesar-salad': 'シーザーサラダ',
+                'caesar-salad-desc': 'シーザードレッシング、クルトン、パルメザンチーズを添えたカリカリのロメインレタス。',
+                'spring-rolls': '春巻き',
+                'spring-rolls-desc': '野菜とお好みのお肉を詰めたカリカリの春巻き。',
+                'kids-nuggets': 'キッズチキンナゲット',
+                'kids-nuggets-desc': 'フライドポテトとケチャップを添えたカリカリのチキンナゲット。',
+                'kids-pasta': 'キッズミニパスタ',
+                'kids-pasta-desc': 'まろやかなトマトソースとチーズを添えた小さなパスタシェル。',
+                'price-note': 'すべての価格には10%のサービス料と7%の政府税が追加されます。',
+                'contact-us': 'お問い合わせ',
+                'contact-info': '連絡先情報',
+                'address': '住所',
+                'phone': '電話',
+                'email': 'メール',
+                'opening-hours': '営業時間',
+                'hours-detail': '土曜日～木曜日: 11:00 - 22:30',
+                'follow-us': 'フォローしてください',
+                'map-placeholder': '当店の位置地図',
+                'map-address': 'プーケット島バンタオビーチ',
+                'footer-tagline': 'パンケーキと幸せで駆動',
+                'quick-links': 'クイックリンク',
+                'home': 'ホーム',
+                'menu': 'メニュー',
+                'about': '概要',
+                'contact': 'お問い合わせ',
+                'contact-footer': 'お問い合わせ',
+                'hours-footer': '営業時間',
+                'hours-days': '土曜日 - 木曜日',
+                'copyright': '© 2025 Crave Restaurant and Bar. All rights reserved.',
+                'make-reservation': '予約する',
+                'your-name': 'お名前',
+                'phone-number': '電話番号',
+                'reservation-date': '日付',
+                'reservation-time': '時間',
+                'number-of-guests': 'ゲスト数',
+                'special-requests': '特別なリクエスト',
+                'special-requests-placeholder': 'アレルギー、特別な行事など',
+                'confirm-reservation': '予約を確認'
+            },
+            ru: {
+                'hero-title': 'Работает на блинах и счастье',
+                'hero-subtitle': 'ЯЙЦА, КОФЕ И ХОРОШИЕ ВИБРАЦИИ',
+                'view-menu': 'Посмотреть меню',
+                'book-now': 'Забронировать сейчас',
+                'about-us': 'О нас',
+                'about-text-1': 'Расположенный на красивом пляже Банг Тао на Пхукете, ресторан и бар Crave предлагает уникальный опыт питания, сочетающий международные кухни и местные вкусы.',
+                'about-text-2': 'Наша философия проста: свежие ингредиенты, творческие рецепты и расслабленная атмосфера, где каждый может наслаждаться вкусной едой и хорошей компанией.',
+                'about-text-3': 'Независимо от того, ищете ли вы сытный завтрак, быстрый обед или романтический ужин с видом на пляж, в Crave есть что-то для каждого.',
+                'open-hours': 'Работает ежедневно',
+                'location': 'Пляж Банг Тао',
+                'our-menu': 'Наше меню',
+                'menu-description': 'Исследуйте наше разнообразное меню, которое включает любимые завтраки, тайские специальности, индийские фьюжн-блюда, пасту, пиццу и многое другое.',
+                'breakfast-set': 'Завтрак Crave',
+                'breakfast-set-desc': 'Два яйца любым способом, бекон, колбаса, тосты и свежие фрукты.',
+                'eggs-benedict': 'Яйца Бенедикт',
+                'eggs-benedict-desc': 'Вареные яйца на английском мафине с канадским беконом и соусом голландский.',
+                'breakfast-burrito': 'Завтрак-буритто',
+                'breakfast-burrito-desc': 'Тортилья с омлетом, беконом, сыром и сальсой.',
+                'green-curry': 'Зеленый карри',
+                'green-curry-desc': 'Традиционный тайский зеленый карри с вашим выбором курицы, говядины или овощей.',
+                'tom-yum': 'Суп том ям',
+                'tom-yum-desc': 'Острый и кислый тайский суп с креветками, грибами и лемонграссом.',
+                'phad-krapao': 'Пад крапао',
+                'phad-krapao-desc': 'Жареный базилик с фаршем и жасминовым рисом, украшенный жареным яйцом.',
+                'avocado-chaat': 'Авокадо чат',
+                'avocado-chaat-desc': 'Кремовый авокадо с индийскими специями, чатни и хрустящим sev.',
+                'butter-chicken': 'Баттер-чикен',
+                'butter-chicken-desc': 'Нежное куриное мясо в богатом томатном и сливочном соусе, подается с наном.',
+                'lamb-masala': 'Говядина масала',
+                'lamb-masala-desc': 'Медленно тушеная баранина в ароматном масала-соусе с басматиным рисом.',
+                'carbonara': 'Карбонара',
+                'carbonara-desc': 'Классическая итальянская паста с яйцами, пекорино, панчеттой и черным перцем.',
+                'aglio-olio': 'Аглио ольо',
+                'aglio-olio-desc': 'Паста с чесноком, оливковым маслом, красным перцем и петрушкой.',
+                'margherita-pizza': 'Пицца Маргарита',
+                'margherita-pizza-desc': 'Классическая пицца с томатным соусом, моцареллой, базиликом и экстра вьетнамским оливковым маслом.',
+                'caesar-salad': 'Цезарь салат',
+                'caesar-salad-desc': 'Хрустящая романо салат с соусом цезарь, гренками и пармезаном.',
+                'spring-rolls': 'Весенние роллы',
+                'spring-rolls-desc': 'Хрустящие весенние роллы с овощами и вашим выбором мяса.',
+                'kids-nuggets': 'Наггетсы для детей',
+                'kids-nuggets-desc': 'Хрустящие куриные наггетсы с картофелем фри и кетчупом.',
+                'kids-pasta': 'Детская паста',
+                'kids-pasta-desc': 'Маленькие пасты с мягким томатным соусом и сыром.',
+                'price-note': 'Все цены включают 10% обслуживание и 7% государственном налоге.',
+                'contact-us': 'Свяжитесь с нами',
+                'contact-info': 'Контактная информация',
+                'address': 'Адрес',
+                'phone': 'Телефон',
+                'email': 'Email',
+                'opening-hours': 'Часы работы',
+                'hours-detail': 'Суббота до четверга: 11:00 - 22:30',
+                'follow-us': 'Следите за нами',
+                'map-placeholder': 'Карта нашего местоположения',
+                'map-address': 'Пляж Банг Тао, Пхукет',
+                'footer-tagline': 'Работает на блинах и счастье',
+                'quick-links': 'Быстрые ссылки',
+                'home': 'Домой',
+                'menu': 'Меню',
+                'about': 'О нас',
+                'contact': 'Контакты',
+                'contact-footer': 'Контакты',
+                'hours-footer': 'Часы работы',
+                'hours-days': 'Суббота - четверг',
+                'copyright': '© 2025 Crave Restaurant and Bar. Все права защищены.',
+                'make-reservation': 'Сделать резерв',
+                'your-name': 'Ваше имя',
+                'phone-number': 'Номер телефона',
+                'reservation-date': 'Дата',
+                'reservation-time': 'Время',
+                'number-of-guests': 'Количество гостей',
+                'special-requests': 'Особые запросы',
+                'special-requests-placeholder': 'Аллергии, особые случаи и т.д.',
+                'confirm-reservation': 'Подтвердить резерв'
+            }
+        };
+        
+        // Current language
+        let currentLang = 'en';
+        
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update all elements with data-lang-key attribute
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key] && el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+            
+            // Update current language display
+            document.getElementById('current-language').textContent = {
+                'en': 'English',
+                'th': 'ไทย',
+                'zh': '中文',
+                'ko': '한국어',
+                'ja': '日本語',
+                'ru': 'Русский'
+            }[lang];
+            
+            document.getElementById('mobile-current-language').textContent = {
+                'en': 'English',
+                'th': 'ไทย',
+                'zh': '中文',
+                'ko': '한국어',
+                'ja': '日本語',
+                'ru': 'Русский'
+            }[lang];
+        }
+        
+        // Language selector event listeners
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+        
+        // Mobile language dropdown toggle
+        document.getElementById('mobile-language-button').addEventListener('click', function() {
+            document.getElementById('mobile-language-dropdown').classList.toggle('hidden');
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        document.getElementById('close-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Mobile nav links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Menu category filter
+        document.querySelectorAll('.menu-category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.menu-category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide menu items based on category
+                document.querySelectorAll('.menu-item').forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Reservation modal
+        const reservationLinks = document.querySelectorAll('a[href="#reservation"]');
+        const reservationModal = document.getElementById('reservation-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        
+        reservationLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                reservationModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModalBtn.addEventListener('click', function() {
+            reservationModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === reservationModal) {
+                reservationModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Reservation form submission
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate form
+            if (!name || !phone || !date || !time) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // In a real implementation, you would send this data to a server
+            console.log('Reservation submitted:', { name, phone, date, time, guests, message });
+            
+            // Show success message
+            alert('Thank you for your reservation! We will contact you shortly to confirm.');
+            
+            // Reset form and close modal
+            this.reset();
+            reservationModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+        
+        // Scroll animation
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight * 0.85) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2');
+            }
+        }
+        
+        // Initialize
+        window.addEventListener('load', function() {
+            handleScrollAnimation();
+            handleHeaderScroll();
+        });
+        
+        window.addEventListener('scroll', function() {
+            handleScrollAnimation();
+            handleHeaderScroll();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body></html>
